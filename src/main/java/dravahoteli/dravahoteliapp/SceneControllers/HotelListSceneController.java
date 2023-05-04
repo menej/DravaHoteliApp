@@ -30,7 +30,7 @@ import java.util.ResourceBundle;
 import static java.lang.Double.MAX_VALUE;
 
 public class HotelListSceneController implements Initializable {
-    //addition
+    //additi on
     /*
     ***********************************************
                 INJECTED FXML ATTRIBUTES

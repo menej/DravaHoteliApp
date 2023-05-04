@@ -1,0 +1,194 @@
+package dravahoteli.dravahoteliapp.Seed;
+
+import dravahoteli.dravahoteliapp.Entities.Hotel;
+import dravahoteli.dravahoteliapp.Entities.Rezervacija;
+import dravahoteli.dravahoteliapp.Entities.Soba;
+import dravahoteli.dravahoteliapp.Entities.Stranka;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
+
+public class DB {
+    public static ArrayList<Hotel> hoteli = new ArrayList<>();
+    public static ArrayList<Soba> sobe = new ArrayList<>();
+    public static ArrayList<Stranka> stranke = new ArrayList<>();
+    public static ArrayList<Rezervacija> rezervacije = new ArrayList<>();
+
+    public static int hid = 0;
+    public static int sid = 0;
+    public static int rid = 0;
+
+    public static String GENERIC_DESCRIPTION1 = "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate molestias esse, repellat, nostrum omnis alias corporis error quam quos accusamus officia at aliquam. Culpa facere fuga quos quas cupiditate repudiandae.";
+    public static String GENERIC_DESCRIPTION2 = "Pridružite se nam...";
+    public static String GENERIC_DESCRIPTION3 = "Pridružite se nam...";
+    public static String GENERIC_DESCRIPTION4 = "Pridružite se nam...";
+    public static String GENERIC_DESCRIPTION5 = "Pridružite se nam...";
+
+    public static ArrayList<Rezervacija> posebneRezervacije = new ArrayList<>();
+
+    @SuppressWarnings("all")
+    public DB() {}
+
+    public static void fillDatabase() {
+        Hotel hotel1 = new Hotel(hid++, "Ožbalt", "Pr Orž'", 2, GENERIC_DESCRIPTION1);
+        Hotel hotel2 = new Hotel(hid++, "Maribor", "Grand Mharibour", 5, GENERIC_DESCRIPTION1);
+        Hotel hotel3 = new Hotel(hid++, "Zlatoličje", "Zlata lisica", 4, GENERIC_DESCRIPTION1);
+        Hotel hotel4 = new Hotel(hid++, "Dravograd", "Drava in grad", 3, GENERIC_DESCRIPTION1);
+        Hotel hotel5 = new Hotel(hid++, "Formin", "Foreminihue", 5, GENERIC_DESCRIPTION1);
+
+        hoteli.add(hotel1);
+        hoteli.add(hotel2);
+        hoteli.add(hotel3);
+        hoteli.add(hotel4);
+        hoteli.add(hotel5);
+
+        Soba soba1 = new Soba(sid++, 0, "Marjetica", 100, 5, GENERIC_DESCRIPTION1, false, 100);
+        Soba soba2 = new Soba(sid++, 0, "Zvonček", 101, 2, GENERIC_DESCRIPTION1, false, 100);
+        Soba soba3 = new Soba(sid++, 0, "Orhideja", 102, 2, GENERIC_DESCRIPTION1, false, 100);
+        Soba soba4 = new Soba(sid++, 1, "Smreka", 103, 3, GENERIC_DESCRIPTION1, false, 100);
+        Soba soba5 = new Soba(sid++, 1, "Bukev", 104, 4, GENERIC_DESCRIPTION1, false, 100);
+        Soba soba6 = new Soba(sid++, 1, "Lipa", 105, 5, GENERIC_DESCRIPTION1, false, 100);
+        Soba soba7 = new Soba(sid++, 2, "Medved", 106, 10, GENERIC_DESCRIPTION1, false, 100);
+        Soba soba8 = new Soba(sid++, 2, "Slon", 107, 8, GENERIC_DESCRIPTION1, false, 100);
+        Soba soba9 = new Soba(sid++, 2, "Žirafa", 108, 2, GENERIC_DESCRIPTION1, false, 100);
+        Soba soba10 = new Soba(sid++, 3, "Tuna", 109, 2, GENERIC_DESCRIPTION1, false, 100);
+        Soba soba11 = new Soba(sid++, 3, "Sardina", 110, 3, GENERIC_DESCRIPTION1, false, 100);
+        Soba soba12 = new Soba(sid++, 3, "Losos", 111, 4, GENERIC_DESCRIPTION1, false, 100);
+        Soba soba13 = new Soba(sid++, 4, "Kokoš", 112, 5, GENERIC_DESCRIPTION1, false, 100);
+        Soba soba14 = new Soba(sid++, 4, "Holob", 113, 4, GENERIC_DESCRIPTION1, false, 100);
+        Soba soba15 = new Soba(sid++, 4, "Sova", 114, 2, GENERIC_DESCRIPTION1, false, 100);
+
+        sobe.add(soba1);
+        sobe.add(soba2);
+        sobe.add(soba3);
+        sobe.add(soba4);
+        sobe.add(soba5);
+        sobe.add(soba6);
+        sobe.add(soba7);
+        sobe.add(soba8);
+        sobe.add(soba9);
+        sobe.add(soba10);
+        sobe.add(soba11);
+        sobe.add(soba12);
+        sobe.add(soba13);
+        sobe.add(soba14);
+        sobe.add(soba15);
+
+        soba1.setHotel(hotel1);
+        soba2.setHotel(hotel1);
+        soba3.setHotel(hotel1);
+        soba4.setHotel(hotel2);
+        soba5.setHotel(hotel2);
+        soba6.setHotel(hotel2);
+        soba7.setHotel(hotel3);
+        soba8.setHotel(hotel3);
+        soba9.setHotel(hotel3);
+        soba10.setHotel(hotel4);
+        soba11.setHotel(hotel4);
+        soba12.setHotel(hotel4);
+        soba13.setHotel(hotel5);
+        soba14.setHotel(hotel5);
+        soba15.setHotel(hotel5);
+
+        hotel1.addSoba(soba1);
+        hotel1.addSoba(soba2);
+        hotel1.addSoba(soba3);
+        hotel2.addSoba(soba4);
+        hotel2.addSoba(soba5);
+        hotel2.addSoba(soba6);
+        hotel3.addSoba(soba7);
+        hotel3.addSoba(soba8);
+        hotel3.addSoba(soba9);
+        hotel4.addSoba(soba10);
+        hotel4.addSoba(soba11);
+        hotel4.addSoba(soba12);
+        hotel5.addSoba(soba13);
+        hotel5.addSoba(soba14);
+        hotel5.addSoba(soba15);
+
+        Stranka stranka1 = new Stranka(
+                "lojzenovak",
+                "varno123",
+                "Lojze",
+                "Novak",
+                LocalDate.now(),
+                "+38612345678",
+                "lojzenovak@hotmail.com",
+                "Levo desno gor 12a"
+        );
+
+        stranke.add(stranka1);
+
+        Rezervacija rezervacija1 = new Rezervacija(
+                rid++,
+                0,
+                LocalDate.parse("2023-06-05"),
+                LocalDate.parse("2023-06-15"),
+                5,
+                100,
+                stranka1.getLoginID()
+
+        );
+
+        rezervacije.add(rezervacija1);
+        soba1.addRezervacija(rezervacija1);
+        stranka1.addRezervacija(rezervacija1);
+    }
+
+    public static ArrayList<Stranka> selectAllFromStranka() {
+        return stranke;
+    }
+
+    public static ArrayList<Stranka> selectFromStrankaWhereLoginId(String loginId) {
+        return new ArrayList<>();
+    }
+
+    public static ArrayList<Hotel> selectAllFromHotel() {
+        return hoteli;
+    }
+
+    public static ArrayList<Hotel> selectFromHotelWhereHid(int hid) {
+        return new ArrayList<>();
+    }
+
+    public static ArrayList<Soba> selectAllFromSoba() {
+        return sobe;
+    }
+
+    public static ArrayList<Soba> selectFromSobaWhereSid(int sid) {
+        return new ArrayList<>();
+    }
+
+    public static ArrayList<Rezervacija> selectAllFromRezervacija() {
+        return rezervacije;
+    }
+
+    public static ArrayList<Rezervacija> selectFromRezervacijaWhereRid() {
+        return new ArrayList<>();
+    }
+
+    public static ArrayList<Rezervacija> selectFromRezervacijaWhereLoginId() {
+        return new ArrayList<>();
+    }
+
+    public static ArrayList<Rezervacija> selectFromRezervacijaWhereSid() {
+        return new ArrayList<>();
+    }
+
+    public static ArrayList<Soba> selectFromSobaWhereHid(int hid) {
+        ArrayList<Soba> arrayList = new ArrayList<>();
+        for (Soba soba : sobe) {
+            if (soba.getHid() == hid) arrayList.add(soba);
+        }
+        return arrayList;
+    }
+
+    public static boolean insertRezervacija(int sid, LocalDate datumOd, LocalDate datumDo, int steviloOseb, double znesek, String loginId) {
+        rezervacije.add(new Rezervacija(rid++, sid, datumOd, datumDo, steviloOseb, znesek, loginId));
+        return true;
+    }
+
+
+}

@@ -19,7 +19,7 @@ public class Main extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 900, 650);
         scene.getStylesheets().add("dravahoteli/dravahoteliapp/css/style.css");
 
-        // stage.setTitle("Hello!");
+        stage.setTitle("Drava Hoteli");
 
 
 

@@ -52,7 +52,7 @@
                         <Insets right="10.0" />
                      </HBox.margin>
                   </Hyperlink>
-                  <Hyperlink minWidth="-Infinity" text="🚪 Odjava" textFill="#2d3319">
+                  <Hyperlink minWidth="-Infinity" onAction="#switchToLoginScene" text="🚪 Odjava" textFill="#2d3319">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>

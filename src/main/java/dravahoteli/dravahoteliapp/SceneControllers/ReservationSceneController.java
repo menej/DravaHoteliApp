@@ -263,4 +263,14 @@ public class ReservationSceneController {
         warnningLabel.setText("");
     }
 
+    public void switchToLoginScene(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("LoginScene.fxml"));
+        Parent root = loader.load();
+
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add("dravahoteli/dravahoteliapp/css/style.css");
+        stage.setScene(scene);
+        stage.show();
+    }
 }

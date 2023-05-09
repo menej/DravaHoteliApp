@@ -10,10 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Control;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
@@ -25,6 +22,8 @@ import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class LoginSceneController implements Initializable {
 
@@ -41,6 +40,8 @@ public class LoginSceneController implements Initializable {
 
     @FXML
     public Label labelWrongPassword;
+    public Button prijava;
+    public Label labelTooManyInputs;
 
     /*
     ***********************************************
@@ -52,6 +53,7 @@ public class LoginSceneController implements Initializable {
 
     // Represents the current signed-in user
     private Stranka currentUser;
+    private int steviloNeuspelihVnosov = 0;
 
 
     /*
@@ -121,7 +123,23 @@ public class LoginSceneController implements Initializable {
             currentUser = stranka;
             switchToMainMenuScene(actionEvent);
         } else {
-            System.out.println("napačno geslo ali uporabniško ime");
+            //System.out.println("napačno geslo ali uporabniško ime");
+            labelWrongPassword.setVisible(true);
+            steviloNeuspelihVnosov++;
+            if (steviloNeuspelihVnosov == 3) {
+                labelTooManyInputs.setVisible(true);
+                labelWrongPassword.setVisible(false);
+                prijava.setDisable(true);
+                Timer timer = new Timer();
+                timer.schedule(new TimerTask() {
+                    @Override
+                    public void run() {
+                        steviloNeuspelihVnosov = 0;
+                        prijava.setDisable(false);
+                        labelTooManyInputs.setVisible(false);
+                    }
+                },   60 * 10 * 1000); // 10 minut
+            }
         }
     }
 

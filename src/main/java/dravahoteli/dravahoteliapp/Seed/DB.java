@@ -44,21 +44,21 @@ public class DB {
         hoteli.add(hotel4);
         hoteli.add(hotel5);
 
-        Soba soba1 = new Soba(sid++, 0, "Marjetica", 100, 5, GENERIC_DESCRIPTION1, false, 100);
-        Soba soba2 = new Soba(sid++, 0, "Zvonček", 101, 2, GENERIC_DESCRIPTION1, false, 100);
-        Soba soba3 = new Soba(sid++, 0, "Orhideja", 102, 2, GENERIC_DESCRIPTION1, false, 100);
-        Soba soba4 = new Soba(sid++, 1, "Smreka", 103, 3, GENERIC_DESCRIPTION1, false, 100);
-        Soba soba5 = new Soba(sid++, 1, "Bukev", 104, 4, GENERIC_DESCRIPTION1, false, 100);
-        Soba soba6 = new Soba(sid++, 1, "Lipa", 105, 5, GENERIC_DESCRIPTION1, false, 100);
-        Soba soba7 = new Soba(sid++, 2, "Medved", 106, 10, GENERIC_DESCRIPTION1, false, 100);
-        Soba soba8 = new Soba(sid++, 2, "Slon", 107, 8, GENERIC_DESCRIPTION1, false, 100);
-        Soba soba9 = new Soba(sid++, 2, "Žirafa", 108, 2, GENERIC_DESCRIPTION1, false, 100);
-        Soba soba10 = new Soba(sid++, 3, "Tuna", 109, 2, GENERIC_DESCRIPTION1, false, 100);
-        Soba soba11 = new Soba(sid++, 3, "Sardina", 110, 3, GENERIC_DESCRIPTION1, false, 100);
-        Soba soba12 = new Soba(sid++, 3, "Losos", 111, 4, GENERIC_DESCRIPTION1, false, 100);
-        Soba soba13 = new Soba(sid++, 4, "Kokoš", 112, 5, GENERIC_DESCRIPTION1, false, 100);
-        Soba soba14 = new Soba(sid++, 4, "Holob", 113, 4, GENERIC_DESCRIPTION1, false, 100);
-        Soba soba15 = new Soba(sid++, 4, "Sova", 114, 2, GENERIC_DESCRIPTION1, false, 100);
+        Soba soba1 = new Soba(sid++, 0, "Marjetica", 100, 5, GENERIC_DESCRIPTION1, false, 100,"/dravahoteli/dravahoteliapp/images/07c6ca159d4d7daa58ad04b6b4930ec1.jpg" );
+        Soba soba2 = new Soba(sid++, 0, "Zvonček", 101, 2, GENERIC_DESCRIPTION1, false, 100,"/dravahoteli/dravahoteliapp/images/86e685af18659ee9ecca35c465603812.jpg");
+        Soba soba3 = new Soba(sid++, 0, "Orhideja", 102, 2, GENERIC_DESCRIPTION1, false, 100,"/dravahoteli/dravahoteliapp/images/624b471bdf247131f10ea14f_61d31b8dbff9b500cbd7ed32_types_of_rooms_in_a_5-star_hotel_2_optimized_optimized.jpeg");
+        Soba soba4 = new Soba(sid++, 1, "Smreka", 103, 3, GENERIC_DESCRIPTION1, false, 100,"/dravahoteli/dravahoteliapp/images/140127103345-peninsula-shanghai-deluxe-mock-up.jpg");
+        Soba soba5 = new Soba(sid++, 1, "Bukev", 104, 4, GENERIC_DESCRIPTION1, false, 100,"/dravahoteli/dravahoteliapp/images/Andra2483-Andra-Queen-Queen.jpg");
+        Soba soba6 = new Soba(sid++, 1, "Lipa", 105, 5, GENERIC_DESCRIPTION1, false, 100,"/dravahoteli/dravahoteliapp/images/07c6ca159d4d7daa58ad04b6b4930ec1.jpg");
+        Soba soba7 = new Soba(sid++, 2, "Medved", 106, 10, GENERIC_DESCRIPTION1, false, 100,"/dravahoteli/dravahoteliapp/images/86e685af18659ee9ecca35c465603812.jpg");
+        Soba soba8 = new Soba(sid++, 2, "Slon", 107, 8, GENERIC_DESCRIPTION1, false, 100,"/dravahoteli/dravahoteliapp/images/Andra2483-Andra-Queen-Queen.jpg");
+        Soba soba9 = new Soba(sid++, 2, "Žirafa", 108, 2, GENERIC_DESCRIPTION1, false, 100,"/dravahoteli/dravahoteliapp/images/624b471bdf247131f10ea14f_61d31b8dbff9b500cbd7ed32_types_of_rooms_in_a_5-star_hotel_2_optimized_optimized.jpeg");
+        Soba soba10 = new Soba(sid++, 3, "Tuna", 109, 2, GENERIC_DESCRIPTION1, false, 100,"/dravahoteli/dravahoteliapp/images/86e685af18659ee9ecca35c465603812.jpg");
+        Soba soba11 = new Soba(sid++, 3, "Sardina", 110, 3, GENERIC_DESCRIPTION1, false, 100,"/dravahoteli/dravahoteliapp/images/140127103345-peninsula-shanghai-deluxe-mock-up.jpg");
+        Soba soba12 = new Soba(sid++, 3, "Losos", 111, 4, GENERIC_DESCRIPTION1, false, 100,"/dravahoteli/dravahoteliapp/images/Andra2483-Andra-Queen-Queen.jpg");
+        Soba soba13 = new Soba(sid++, 4, "Kokoš", 112, 5, GENERIC_DESCRIPTION1, false, 100,"/dravahoteli/dravahoteliapp/images/07c6ca159d4d7daa58ad04b6b4930ec1.jpg");
+        Soba soba14 = new Soba(sid++, 4, "Holob", 113, 4, GENERIC_DESCRIPTION1, false, 100,"/dravahoteli/dravahoteliapp/images/86e685af18659ee9ecca35c465603812.jpg");
+        Soba soba15 = new Soba(sid++, 4, "Sova", 114, 2, GENERIC_DESCRIPTION1, false, 100,"/dravahoteli/dravahoteliapp/images/624b471bdf247131f10ea14f_61d31b8dbff9b500cbd7ed32_types_of_rooms_in_a_5-star_hotel_2_optimized_optimized.jpeg");
 
         sobe.add(soba1);
         sobe.add(soba2);

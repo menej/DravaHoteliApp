@@ -91,7 +91,7 @@ public class RoomListSceneController implements Initializable {
 
         String header = String.format("%s \uD83D\uDECF%d", name, numPersons);
 
-        InputStream inputStream = getClass().getResourceAsStream("/dravahoteli/dravahoteliapp/images/roomlistimage_" + soba.getSid() + ".jpg");
+        InputStream inputStream = getClass().getResourceAsStream(soba.getUrl());
         InputStream inputStreamBackup = getClass().getResourceAsStream("/dravahoteli/dravahoteliapp/images/missing_img.jpg");
         if (inputStream != null) image = new Image(Objects.requireNonNull(inputStream));
         else if (inputStreamBackup != null) image = new Image(Objects.requireNonNull(inputStreamBackup));

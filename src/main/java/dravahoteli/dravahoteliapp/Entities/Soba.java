@@ -19,6 +19,8 @@ public class Soba {
 
     private String ime;
 
+    private String url;
+
     private int stevilkaSobe;
 
     private int steviloPostelj;
@@ -37,7 +39,7 @@ public class Soba {
 
     public Soba() {}
 
-    public Soba(int sid, int hid, String ime, int stevilkaSobe, int steviloPostelj, String opis, boolean balkon, double cenaDan) {
+    public Soba(int sid, int hid, String ime, int stevilkaSobe, int steviloPostelj, String opis, boolean balkon, double cenaDan, String url) {
         this.sid = sid;
         this.hid = hid;
         this.ime = ime;
@@ -46,6 +48,7 @@ public class Soba {
         this.opis = opis;
         this.balkon = balkon;
         this.cenaDan = cenaDan;
+        this.url = url;
     }
 
     /** @pdOid 48399b9e-18a3-4031-9d55-1ddaab834a2e */
@@ -167,7 +170,9 @@ public class Soba {
         return cenaDan;
     }
 
-
+    public String getUrl() {
+        return url;
+        }
     public int getSid() {
         return sid;
     }

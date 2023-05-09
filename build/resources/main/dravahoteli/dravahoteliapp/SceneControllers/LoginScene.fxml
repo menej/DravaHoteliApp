@@ -42,7 +42,7 @@
                <children>
                   <ImageView fitHeight="655.0" fitWidth="350.0" pickOnBounds="true" GridPane.hgrow="ALWAYS">
                      <image>
-                        <Image url="@../images/mainscreenimage.jpg" />
+                        <Image url="@../images/hotelPark.jpg" />
                      </image>
                      <viewport>
                         <Rectangle2D />

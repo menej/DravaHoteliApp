@@ -42,7 +42,7 @@
                <children>
                   <ImageView fitHeight="655.0" fitWidth="350.0" pickOnBounds="true" GridPane.hgrow="ALWAYS">
                      <image>
-                        <Image url="@../images/mainscreenimage.jpg" />
+                        <Image url="@../images/hotelPark.jpg" />
                      </image>
                      <viewport>
                         <Rectangle2D />
@@ -98,7 +98,7 @@
                   </AnchorPane>
                </children>
             </GridPane>
-            <Label fx:id="labelTooManyInputs" text="Preveč vnosov. Prosim počakajte 10 minut!" textFill="#bc0f0f" visible="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+            <Label fx:id="labelTooManyInputs" text="Preveč vnosov. Prosim počakajte 10 minut!" textFill="#bc0f0f" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="3" />
          </children>
       </GridPane>
    </center>

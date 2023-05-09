@@ -99,13 +99,13 @@ public class RoomDetailsSceneController implements Initializable {
     private boolean validateReservationDates(LocalDate dateOfArrival, LocalDate dateOfDeparture, javafx.scene.control.Control control) {
         // Arrival date is before today date
         if (control == arrivalDateDP && dateOfArrival != null && dateOfArrival.isBefore(LocalDate.now())) {
-            labelDateWarning.setText("Napaka: datum izposoje mora biti izbran za današnjim datumom.");
+            labelDateWarning.setText("Napaka: datum rezervacije mora biti izbran za današnjim datumom.");
             setFlaggedState(arrivalDateDP);
             return false;
         }
         // Departure date is before today date
         if (control == departureDateDP && departureDateDP != null && dateOfDeparture.isBefore(LocalDate.now())) {
-            labelDateWarning.setText("Napaka: datum vrnitve mora biti izbran za današnjim datumom.");
+            labelDateWarning.setText("Napaka: datum odhoda mora biti izbran za današnjim datumom.");
             setFlaggedState(departureDateDP);
             return false;
         }
@@ -117,7 +117,7 @@ public class RoomDetailsSceneController implements Initializable {
 
         // Check if the dates are the same (customer can not make a reservation for the same day)
         if (dateOfArrival.equals(dateOfDeparture)) {
-            labelDateWarning.setText("Napaka: stranka ne more rezervirati avta za en dan.");
+            labelDateWarning.setText("Napaka: stranka ne more rezervirati sobe za manj kot eno nočitev.");
 
             setFlaggedState(arrivalDateDP);
             setFlaggedState(departureDateDP);
@@ -126,7 +126,7 @@ public class RoomDetailsSceneController implements Initializable {
 
         // Check if the dates are set in the correct manner (return date is before rental date)
         if (dateOfDeparture.isBefore(dateOfArrival)) {
-            labelDateWarning.setText("Napaka: datum za vrnitev vozila je pred datumom za izposojo.");
+            labelDateWarning.setText("Napaka: datum odhoda je pred datumom za izposojo.");
 
             setFlaggedState(departureDateDP);
             return false;
@@ -217,7 +217,7 @@ public class RoomDetailsSceneController implements Initializable {
             labelDateWarning.setText("Izberite število oseb, prosim.");
             return;
         }
-        switchToRoomListScene(actionEvent);
+        switchToReservationSuccessScene(actionEvent);
     }
 
     /*
@@ -226,6 +226,20 @@ public class RoomDetailsSceneController implements Initializable {
     ***********************************************
      */
     public void switchToRoomListScene(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("RoomListScene.fxml"));
+        Parent root = loader.load();
+
+        RoomListSceneController roomListSceneController = loader.getController();
+        roomListSceneController.onSwitchScene(currentUser, currentSelectedHotel, currentSelectedHotel.vrniSeznamSobHotela(currentSelectedHotel.getHid()));
+
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add("dravahoteli/dravahoteliapp/css/style.css");
+        stage.setScene(scene);
+        stage.show();
+
+    }
+    public void switchToReservationSuccessScene(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("ReservationScene.fxml"));
         Parent root = loader.load();
 
@@ -336,7 +350,7 @@ public class RoomDetailsSceneController implements Initializable {
 
         // Initialize image
         Image image = null;
-        InputStream inputStream = getClass().getResourceAsStream("/dravahoteli/dravahoteliapp/images/roomlistimage_" + currentSelectedRoom.getSid() + ".jpg");
+        InputStream inputStream = getClass().getResourceAsStream(currentSelectedRoom.getUrl());
         InputStream inputStreamBackup = getClass().getResourceAsStream("/dravahoteli/dravahoteliapp/images/missing_img.jpg");
         if (inputStream != null) image = new Image(Objects.requireNonNull(inputStream));
         else if (inputStreamBackup != null) image = new Image(Objects.requireNonNull(inputStreamBackup));

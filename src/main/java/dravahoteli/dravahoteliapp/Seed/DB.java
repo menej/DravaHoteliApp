@@ -109,8 +109,8 @@ public class DB {
         hotel5.addSoba(soba15);
 
         Stranka stranka1 = new Stranka(
-                "lojzenovak",
-                "varno123",
+                "1",
+                "1",
                 "Lojze",
                 "Novak",
                 LocalDate.now(),
@@ -121,6 +121,8 @@ public class DB {
 
         stranke.add(stranka1);
 
+
+        stranke.add(stranka1);
         Rezervacija rezervacija1 = new Rezervacija(
                 rid++,
                 0,

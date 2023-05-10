@@ -226,9 +226,23 @@ public class ReservationSceneController {
     }
 
     @FXML
-    void switchToRoomDetailsScene(ActionEvent event) {
 
-    }
+    private void switchToRoomDetailsScene(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("RoomDetailsScene.fxml"));
+
+        Parent root = loader.load();
+
+        RoomDetailsSceneController roomDetailsSceneController = loader.getController();
+        roomDetailsSceneController.onSwitchScene(currentUser, currentSelectedHotel, currentSelectedRoom);
+
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add("dravahoteli/dravahoteliapp/css/style.css");
+        stage.setScene(scene);
+        stage.show();
+
+
+}
 
     /*
     ***********************************************

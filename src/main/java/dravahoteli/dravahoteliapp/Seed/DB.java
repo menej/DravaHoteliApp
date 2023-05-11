@@ -19,12 +19,14 @@ public class DB {
     public static int hid = 0;
     public static int sid = 0;
     public static int rid = 0;
+    public static String GENERIC_DESCRIPTIONH1 = "Hotel se nahaja v središču mesta in ponuja razkošne sobe z moderno opremo. V sklopu hotela je na voljo tudi restavracija, kjer strežejo vrhunske jedi.";
+    public static String GENERIC_DESCRIPTIONH2 = "Hotel se nahaja ob obali in ponuja čudovit razgled na morje. Sobe so prostorne in opremljene z balkoni, kjer si lahko privoščite kavo ob sončnem vzhodu. V sklopu hotela je na voljo tudi bazen in spa center.";
 
-    public static String GENERIC_DESCRIPTION1 = "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate molestias esse, repellat, nostrum omnis alias corporis error quam quos accusamus officia at aliquam. Culpa facere fuga quos quas cupiditate repudiandae.";
-    public static String GENERIC_DESCRIPTION2 = "Pridružite se nam...";
-    public static String GENERIC_DESCRIPTION3 = "Pridružite se nam...";
-    public static String GENERIC_DESCRIPTION4 = "Pridružite se nam...";
-    public static String GENERIC_DESCRIPTION5 = "Pridružite se nam...";
+    public static String GENERIC_DESCRIPTION1 = "Soba je majhna, v njej se nahaja le postelja, omarica in mizica. Kljub temu pa je zelo prijetna in udobna, saj je opremljena z mehkimi blazinami in odejami.";
+    public static String GENERIC_DESCRIPTION2 = "Ta soba je svetla in prostorna, z velikim oknom, ki omogoča veliko naravne svetlobe. V njej se nahaja velika postelja, garderobna omara in pisalna miza.";
+    public static String GENERIC_DESCRIPTION3 = "Soba ima temno obarvane stene, ki ustvarjajo intimno in udobno vzdušje. V njej se nahaja udobna postelja, majhna knjižna polica in mizica za delo.";
+    public static String GENERIC_DESCRIPTION4 = "Ta soba je opremljena v modernem stilu, z minimalističnim pohištvom in svetlimi barvami. V njej se nahaja velika postelja, garderobna omara in mizica za delo.\n";
+    public static String GENERIC_DESCRIPTION5 = "Soba ima rustikalni videz, z lesenim pohištvom in toplimi barvami. V njej se nahaja velika postelja, garderobna omara in majhna miz";
 
     public static ArrayList<Rezervacija> posebneRezervacije = new ArrayList<>();
 
@@ -32,11 +34,11 @@ public class DB {
     public DB() {}
 
     public static void fillDatabase() {
-        Hotel hotel1 = new Hotel(hid++, "Ožbalt", "Pr Orž'", 2, GENERIC_DESCRIPTION1);
-        Hotel hotel2 = new Hotel(hid++, "Maribor", "Grand Mharibour", 5, GENERIC_DESCRIPTION1);
-        Hotel hotel3 = new Hotel(hid++, "Zlatoličje", "Zlata lisica", 4, GENERIC_DESCRIPTION1);
-        Hotel hotel4 = new Hotel(hid++, "Dravograd", "Drava in grad", 3, GENERIC_DESCRIPTION1);
-        Hotel hotel5 = new Hotel(hid++, "Formin", "Foreminihue", 5, GENERIC_DESCRIPTION1);
+        Hotel hotel1 = new Hotel(hid++, "Ožbalt", "Pr Orž'", 2, GENERIC_DESCRIPTIONH1);
+        Hotel hotel2 = new Hotel(hid++, "Maribor", "Grand Mharibour", 5, GENERIC_DESCRIPTIONH2);
+        Hotel hotel3 = new Hotel(hid++, "Zlatoličje", "Zlata lisica", 4, GENERIC_DESCRIPTIONH1);
+        Hotel hotel4 = new Hotel(hid++, "Dravograd", "Drava in grad", 3, GENERIC_DESCRIPTIONH2);
+        Hotel hotel5 = new Hotel(hid++, "Formin", "Foreminihue", 5, GENERIC_DESCRIPTIONH1);
 
         hoteli.add(hotel1);
         hoteli.add(hotel2);
@@ -44,21 +46,21 @@ public class DB {
         hoteli.add(hotel4);
         hoteli.add(hotel5);
 
-        Soba soba1 = new Soba(sid++, 0, "Marjetica", 100, 5, GENERIC_DESCRIPTION1, false, 100,"/dravahoteli/dravahoteliapp/images/07c6ca159d4d7daa58ad04b6b4930ec1.jpg" );
-        Soba soba2 = new Soba(sid++, 0, "Zvonček", 101, 2, GENERIC_DESCRIPTION1, false, 100,"/dravahoteli/dravahoteliapp/images/86e685af18659ee9ecca35c465603812.jpg");
-        Soba soba3 = new Soba(sid++, 0, "Orhideja", 102, 2, GENERIC_DESCRIPTION1, false, 100,"/dravahoteli/dravahoteliapp/images/624b471bdf247131f10ea14f_61d31b8dbff9b500cbd7ed32_types_of_rooms_in_a_5-star_hotel_2_optimized_optimized.jpeg");
-        Soba soba4 = new Soba(sid++, 1, "Smreka", 103, 3, GENERIC_DESCRIPTION1, false, 100,"/dravahoteli/dravahoteliapp/images/140127103345-peninsula-shanghai-deluxe-mock-up.jpg");
-        Soba soba5 = new Soba(sid++, 1, "Bukev", 104, 4, GENERIC_DESCRIPTION1, false, 100,"/dravahoteli/dravahoteliapp/images/Andra2483-Andra-Queen-Queen.jpg");
-        Soba soba6 = new Soba(sid++, 1, "Lipa", 105, 5, GENERIC_DESCRIPTION1, false, 100,"/dravahoteli/dravahoteliapp/images/07c6ca159d4d7daa58ad04b6b4930ec1.jpg");
-        Soba soba7 = new Soba(sid++, 2, "Medved", 106, 10, GENERIC_DESCRIPTION1, false, 100,"/dravahoteli/dravahoteliapp/images/86e685af18659ee9ecca35c465603812.jpg");
-        Soba soba8 = new Soba(sid++, 2, "Slon", 107, 8, GENERIC_DESCRIPTION1, false, 100,"/dravahoteli/dravahoteliapp/images/Andra2483-Andra-Queen-Queen.jpg");
-        Soba soba9 = new Soba(sid++, 2, "Žirafa", 108, 2, GENERIC_DESCRIPTION1, false, 100,"/dravahoteli/dravahoteliapp/images/624b471bdf247131f10ea14f_61d31b8dbff9b500cbd7ed32_types_of_rooms_in_a_5-star_hotel_2_optimized_optimized.jpeg");
-        Soba soba10 = new Soba(sid++, 3, "Tuna", 109, 2, GENERIC_DESCRIPTION1, false, 100,"/dravahoteli/dravahoteliapp/images/86e685af18659ee9ecca35c465603812.jpg");
-        Soba soba11 = new Soba(sid++, 3, "Sardina", 110, 3, GENERIC_DESCRIPTION1, false, 100,"/dravahoteli/dravahoteliapp/images/140127103345-peninsula-shanghai-deluxe-mock-up.jpg");
-        Soba soba12 = new Soba(sid++, 3, "Losos", 111, 4, GENERIC_DESCRIPTION1, false, 100,"/dravahoteli/dravahoteliapp/images/Andra2483-Andra-Queen-Queen.jpg");
-        Soba soba13 = new Soba(sid++, 4, "Kokoš", 112, 5, GENERIC_DESCRIPTION1, false, 100,"/dravahoteli/dravahoteliapp/images/07c6ca159d4d7daa58ad04b6b4930ec1.jpg");
-        Soba soba14 = new Soba(sid++, 4, "Holob", 113, 4, GENERIC_DESCRIPTION1, false, 100,"/dravahoteli/dravahoteliapp/images/86e685af18659ee9ecca35c465603812.jpg");
-        Soba soba15 = new Soba(sid++, 4, "Sova", 114, 2, GENERIC_DESCRIPTION1, false, 100,"/dravahoteli/dravahoteliapp/images/624b471bdf247131f10ea14f_61d31b8dbff9b500cbd7ed32_types_of_rooms_in_a_5-star_hotel_2_optimized_optimized.jpeg");
+        Soba soba1 = new Soba(sid++, 0, "Marjetica", 100, 5, GENERIC_DESCRIPTION1, false, 73,"/dravahoteli/dravahoteliapp/images/07c6ca159d4d7daa58ad04b6b4930ec1.jpg" );
+        Soba soba2 = new Soba(sid++, 0, "Zvonček", 101, 2, GENERIC_DESCRIPTION2, false, 110,"/dravahoteli/dravahoteliapp/images/86e685af18659ee9ecca35c465603812.jpg");
+        Soba soba3 = new Soba(sid++, 0, "Orhideja", 102, 2, GENERIC_DESCRIPTION3, false, 170,"/dravahoteli/dravahoteliapp/images/624b471bdf247131f10ea14f_61d31b8dbff9b500cbd7ed32_types_of_rooms_in_a_5-star_hotel_2_optimized_optimized.jpeg");
+        Soba soba4 = new Soba(sid++, 1, "Smreka", 103, 3, GENERIC_DESCRIPTION5, false, 124,"/dravahoteli/dravahoteliapp/images/140127103345-peninsula-shanghai-deluxe-mock-up.jpg");
+        Soba soba5 = new Soba(sid++, 1, "Bukev", 104, 4, GENERIC_DESCRIPTION4, false, 121,"/dravahoteli/dravahoteliapp/images/Andra2483-Andra-Queen-Queen.jpg");
+        Soba soba6 = new Soba(sid++, 1, "Lipa", 105, 5, GENERIC_DESCRIPTION3, false, 314,"/dravahoteli/dravahoteliapp/images/07c6ca159d4d7daa58ad04b6b4930ec1.jpg");
+        Soba soba7 = new Soba(sid++, 2, "Medved", 106, 10, GENERIC_DESCRIPTION5, false, 215,"/dravahoteli/dravahoteliapp/images/86e685af18659ee9ecca35c465603812.jpg");
+        Soba soba8 = new Soba(sid++, 2, "Slon", 107, 8, GENERIC_DESCRIPTION1, false, 241,"/dravahoteli/dravahoteliapp/images/Andra2483-Andra-Queen-Queen.jpg");
+        Soba soba9 = new Soba(sid++, 2, "Žirafa", 108, 2, GENERIC_DESCRIPTION4, false, 124,"/dravahoteli/dravahoteliapp/images/624b471bdf247131f10ea14f_61d31b8dbff9b500cbd7ed32_types_of_rooms_in_a_5-star_hotel_2_optimized_optimized.jpeg");
+        Soba soba10 = new Soba(sid++, 3, "Tuna", 109, 2, GENERIC_DESCRIPTION2, false, 100,"/dravahoteli/dravahoteliapp/images/86e685af18659ee9ecca35c465603812.jpg");
+        Soba soba11 = new Soba(sid++, 3, "Sardina", 110, 3, GENERIC_DESCRIPTION5, false, 170,"/dravahoteli/dravahoteliapp/images/140127103345-peninsula-shanghai-deluxe-mock-up.jpg");
+        Soba soba12 = new Soba(sid++, 3, "Losos", 111, 4, GENERIC_DESCRIPTION2, false, 160,"/dravahoteli/dravahoteliapp/images/Andra2483-Andra-Queen-Queen.jpg");
+        Soba soba13 = new Soba(sid++, 4, "Kokoš", 112, 5, GENERIC_DESCRIPTION3, false, 230,"/dravahoteli/dravahoteliapp/images/07c6ca159d4d7daa58ad04b6b4930ec1.jpg");
+        Soba soba14 = new Soba(sid++, 4, "Holob", 113, 4, GENERIC_DESCRIPTION2, false, 84,"/dravahoteli/dravahoteliapp/images/86e685af18659ee9ecca35c465603812.jpg");
+        Soba soba15 = new Soba(sid++, 4, "Sova", 114, 2, GENERIC_DESCRIPTION1, false, 415,"/dravahoteli/dravahoteliapp/images/624b471bdf247131f10ea14f_61d31b8dbff9b500cbd7ed32_types_of_rooms_in_a_5-star_hotel_2_optimized_optimized.jpeg");
 
         sobe.add(soba1);
         sobe.add(soba2);

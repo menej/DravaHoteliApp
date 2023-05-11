@@ -2,6 +2,7 @@ package dravahoteli.dravahoteliapp.SceneControllers;
 
 import dravahoteli.dravahoteliapp.Boundaries.ZMStrankaOpraviRezervacijo;
 import dravahoteli.dravahoteliapp.Entities.Hotel;
+import dravahoteli.dravahoteliapp.Entities.Rezervacija;
 import dravahoteli.dravahoteliapp.Entities.Soba;
 import dravahoteli.dravahoteliapp.Entities.Stranka;
 import dravahoteli.dravahoteliapp.Seed.DB;
@@ -202,7 +203,10 @@ public class ReservationSceneController {
 
         if (!opravljenoPlacilo)
             warnningLabel.setText("Napaka pri preverjanju podatkov o kartici. Prosimo preverite podatke kartice in poskusite ponovno.");
-        else switchToRoomReservationSuccessScene(event);
+        else {
+            switchToRoomReservationSuccessScene(event);
+        }
+
     }
 
     /*
@@ -216,7 +220,7 @@ public class ReservationSceneController {
 
 
         ReservationSuccessSceneController reservationSceneController = loader.getController();
-        reservationSceneController.onSwitchScene(currentUser);
+        reservationSceneController.onSwitchScene(currentUser, reservationInfo,  currentSelectedRoom, currentSelectedHotel, cardNumberIF.getText());
 
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);

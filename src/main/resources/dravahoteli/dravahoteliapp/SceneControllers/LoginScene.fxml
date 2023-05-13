@@ -98,7 +98,7 @@
                   </AnchorPane>
                </children>
             </GridPane>
-            <Label fx:id="labelTooManyInputs" text="Preveč vnosov. Prosim počakajte 10 minut!" textFill="#bc0f0f" visible="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+            <Label fx:id="labelTooManyInputs" text="Preveliko število nepravilnih vnosov. Prosimo počakajte 10 minut!" textFill="#bc0f0f" visible="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
          </children>
       </GridPane>
    </center>

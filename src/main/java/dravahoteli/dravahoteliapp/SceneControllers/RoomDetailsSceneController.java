@@ -1,9 +1,11 @@
 package dravahoteli.dravahoteliapp.SceneControllers;
 
+import dravahoteli.dravahoteliapp.Boundaries.ZMStrankaOpraviRezervacijo;
 import dravahoteli.dravahoteliapp.Entities.Hotel;
 import dravahoteli.dravahoteliapp.Entities.Rezervacija;
 import dravahoteli.dravahoteliapp.Entities.Soba;
 import dravahoteli.dravahoteliapp.Entities.Stranka;
+import dravahoteli.dravahoteliapp.Seed.DB;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -269,9 +271,9 @@ public class RoomDetailsSceneController implements Initializable {
             INITIALIZATION METHODS
     ***********************************************
     */
-    private boolean isDateHitInDB(LocalDate date) {
+    private boolean isDateHitInDBDeprecated(LocalDate date) {
         HashSet<Rezervacija> reservations = currentSelectedRoom.getRezervacija();
-
+        System.out.println(reservations);
         for (Rezervacija reservation : reservations) {
             LocalDate dateOfArrival = reservation.getDatumOd();
             LocalDate dateOfDeparture = reservation.getDatumDo();
@@ -282,8 +284,14 @@ public class RoomDetailsSceneController implements Initializable {
         return false;
     }
 
+    private boolean isDateHitInDB(LocalDate date) {
+        ZMStrankaOpraviRezervacijo zmStrankaOpraviRezervacijo = new ZMStrankaOpraviRezervacijo();
+        return zmStrankaOpraviRezervacijo.preglejRazporolozljivost(date, currentSelectedRoom.getSid());
+    }
+
     private boolean areDatesHitInDB(LocalDate userDOA, LocalDate userDOD) {
-        HashSet<Rezervacija> reservations = currentSelectedRoom.getRezervacija();
+        // TODO: Zelo slaba rešitev (mešanje UI in podatkov) -> potrebna nova metoda v kontrolerju
+        HashSet<Rezervacija> reservations = new HashSet<>(DB.selectFromRezervacijaWhereSid(currentSelectedRoom.getSid()));
         for (Rezervacija reservation : reservations) {
             LocalDate reservationDOA = reservation.getDatumOd();
             LocalDate reservationDOD = reservation.getDatumDo();
@@ -299,6 +307,8 @@ public class RoomDetailsSceneController implements Initializable {
      * https://stackoverflow.com/questions/62513192/javafx-datepicker-disable-future-dates
      */
     private void initializeDatePickers() {
+        ZMStrankaOpraviRezervacijo zmStrankaOpraviRezervacijo = new ZMStrankaOpraviRezervacijo();
+
         arrivalDateDP.setDayCellFactory(param -> new DateCell() {
             @Override
             public void updateItem(LocalDate date, boolean empty) {

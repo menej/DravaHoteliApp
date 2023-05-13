@@ -4,9 +4,9 @@ package dravahoteli.dravahoteliapp.Entities; /**********************************
  * Purpose: Defines the Class Soba
  ***********************************************************************/
 
-import dravahoteli.dravahoteliapp.Entities.Hotel;
-import dravahoteli.dravahoteliapp.Entities.Rezervacija;
+import dravahoteli.dravahoteliapp.Seed.DB;
 
+import java.time.LocalDate;
 import java.util.*;
 
 /** @pdOid 2454bb53-a0a3-4ab5-9a21-484f78785e71 */
@@ -64,9 +64,8 @@ public class Soba {
     }
 
     /** @pdOid 88d8ea5c-6822-4820-9bc6-f2ee4a5cbd67 */
-    public java.lang.Object[] vrniRazporozljivost() {
-        // TODO: implement
-        return null;
+    public HashSet<Rezervacija> vrniRezervacijeSobe(int SID) {
+        return new HashSet<>(DB.selectFromRezervacijaWhereSid(SID));
     }
 
 

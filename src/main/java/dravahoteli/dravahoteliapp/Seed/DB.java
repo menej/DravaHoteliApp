@@ -125,13 +125,12 @@ public class DB {
 
         Rezervacija rezervacija1 = new Rezervacija(
                 rid++,
-                0,
+                4,
                 LocalDate.parse("2023-06-05"),
                 LocalDate.parse("2023-06-15"),
-                5,
+                4,
                 100,
                 stranka1.getLoginID()
-
         );
 
         rezervacije.add(rezervacija1);
@@ -175,8 +174,13 @@ public class DB {
         return new ArrayList<>();
     }
 
-    public static ArrayList<Rezervacija> selectFromRezervacijaWhereSid() {
-        return new ArrayList<>();
+    public static ArrayList<Rezervacija> selectFromRezervacijaWhereSid(int SID) {
+        // Tole bi bla katastrofa, če bi imeli velik rezervacij, Too bad.
+       ArrayList<Rezervacija> arrayList = new ArrayList<>();
+       for (Rezervacija rezervacija: rezervacije) {
+           if (rezervacija.getSid() == SID) arrayList.add(rezervacija);
+       }
+       return arrayList;
     }
 
     public static ArrayList<Soba> selectFromSobaWhereHid(int hid) {

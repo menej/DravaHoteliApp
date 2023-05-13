@@ -5,7 +5,6 @@ import dravahoteli.dravahoteliapp.Entities.Hotel;
 import dravahoteli.dravahoteliapp.Entities.Rezervacija;
 import dravahoteli.dravahoteliapp.Entities.Soba;
 import dravahoteli.dravahoteliapp.Entities.Stranka;
-import dravahoteli.dravahoteliapp.Seed.DB;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -48,9 +47,17 @@ public class KOpraviRezervacijo {
         return null;
     }
 
-    public java.lang.Object[] prikaziRazporozljivostSobe() {
-        // TODO: implement
-        return null;
+    public boolean prikaziRazpolozljivostSobe(LocalDate datum, int SID) {
+        Soba soba = new Soba();
+        HashSet<Rezervacija> reservations = soba.vrniRezervacijeSobe(SID);
+        for (Rezervacija reservation : reservations) {
+            LocalDate dateOfArrival = reservation.getDatumOd();
+            LocalDate dateOfDeparture = reservation.getDatumDo();
+            if (!(datum.isBefore(dateOfArrival) || datum.isAfter(dateOfDeparture))) {
+                return true;
+            }
+        }
+        return false;
     }
 
 

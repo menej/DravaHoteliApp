@@ -79,4 +79,12 @@ public class Rezervacija {
     public void setDatumDo(LocalDate datumDo) {
         this.datumDo = datumDo;
     }
+
+    public int getSid() {
+        return sid;
+    }
+
+    public void setSid(int sid) {
+        this.sid = sid;
+    }
 }

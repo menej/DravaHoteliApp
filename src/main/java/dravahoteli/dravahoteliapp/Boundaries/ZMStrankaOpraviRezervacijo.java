@@ -6,19 +6,14 @@ import dravahoteli.dravahoteliapp.Entities.Soba;
 import dravahoteli.dravahoteliapp.Entities.Stranka;
 import dravahoteli.dravahoteliapp.Main;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -27,8 +22,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.ResourceBundle;
-
-import static java.lang.Double.MAX_VALUE;
 
 public class ZMStrankaOpraviRezervacijo implements Initializable {
 
@@ -73,9 +66,9 @@ public class ZMStrankaOpraviRezervacijo implements Initializable {
     }
 
 
-    public boolean preglejRazporozljivost() {
-        // TODO: implement
-        return false;
+    public boolean preglejRazporolozljivost(LocalDate datum, int SID) {
+        KOpraviRezervacijo kOpraviRezervacijo = new KOpraviRezervacijo();
+        return kOpraviRezervacijo.prikaziRazpolozljivostSobe(datum, SID);
     }
 
 
